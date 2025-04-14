@@ -19,6 +19,7 @@ RUN apt update && apt install -y \
     x11-apps \
     x11vnc \
     fluxbox \
+    wget \
     && rm -rf /var/lib/apt/lists/*
 
 
@@ -29,6 +30,7 @@ RUN     x11vnc -storepasswd 1234 ~/.vnc/passwd
 
 COPY . .
 
+RUN wget https://codeberg.org/attachments/147f41a3-a6ea-45f6-8c2a-25bac4495a1d .\printers.xml
 
 RUN pip install --no-cache-dir \
     pyyaml \
