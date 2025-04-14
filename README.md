@@ -8,6 +8,22 @@ The Epson Printer Configuration Tool provides an interface for the configuration
 
 The software also includes a configurable printer dictionary, which can be easily extended. In addition, it is possible to import and convert external Epson printer configuration databases.
 
+## Docker Compose
+```bash
+version: "3.3"
+services:
+  epson_print_conf:
+    ports:
+      - 5990:5990
+    environment:
+      - HOME=/
+    container_name: epson-print-config
+    image: pokys/epson_print_conf
+    command: x11vnc -usepw -create
+networks: {}
+
+```
+
 ## Key Features
 
 - __SNMP Interface__: Connect and manage Epson printers using SNMP over TCP/IP, supporting Wi-Fi connections (not USB).
