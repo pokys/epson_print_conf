@@ -21,6 +21,7 @@ RUN apt update && apt install -y \
     x11-apps \
     x11vnc \
     fluxbox \
+    curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Set working directory
@@ -28,6 +29,8 @@ WORKDIR /app
 
 RUN     mkdir ~/.vnc
 RUN     x11vnc -storepasswd 1234 ~/.vnc/passwd
+
+RUN curl -L -o /app/IMPORT-THIS.yml https://codeberg.org/attachments/147f41a3-a6ea-45f6-8c2a-25bac4495a1d
 
 COPY . .
 
