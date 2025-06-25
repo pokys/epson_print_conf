@@ -30,7 +30,7 @@ WORKDIR /app
 RUN     mkdir ~/.vnc
 RUN     x11vnc -storepasswd 1234 ~/.vnc/passwd
 
-RUN curl -L -o /app/IMPORT-THIS.yml https://codeberg.org/attachments/147f41a3-a6ea-45f6-8c2a-25bac4495a1d
+RUN curl -L -o /app/IMPORT-THIS.xml https://codeberg.org/attachments/147f41a3-a6ea-45f6-8c2a-25bac4495a1d
 
 COPY . .
 
